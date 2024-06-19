@@ -2,28 +2,27 @@ console.log("Digite dois números para calcular o MMC:");
 
 let num1 = 0;
 let num2 = 0;
-const primos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
+let numeros = []
 
 process.stdin.on("data", function(data) {
-  if (!num1) {
-    num1 = Number(data.toString().trim());
-    console.log("Primeiro número inserido: " + num1);
-  } else if (!num2) {
-    num2 = Number(data.toString().trim());
-    console.log("Segundo número inserido: " + num2);
-    
-    // Inicializa o MMC como 1
-    let mmc = 1;
-    
-    // Verifica a divisibilidade pelos números primos
-    for (let i = 0; i < primos.length; i++) {
-      if (num1 % primos[i] === 0 || num2 % primos[i] === 0) {
-        mmc *= primos[i];
-      }
-    }
-    
-    console.log("O MMC de ", num1, "e", num2," é:", mmc);
+  let numero = Number(data.toString().trim())
+  if (isNaN(numero)){
+    console.log("Digite um número válido ")
 
-    process.exit(); // Encerra o processo após calcular o MMC
+  } else {
+    numeros.push(numero)
+    if (numeros.lenght === 2){
+      let a = numeros[0]
+      let b = numeros[1]
+      let originalB = b
+      //aqui vai o mdc
+      const mmc = Math.abs(numeros[0]*numeros[1])/mdc 
+      console.log("MMC: " + mmc)
+      process.exit()
+
+    } else {
+      console.log("Digite o segundo  número ")
+    }
   }
+  
 });
