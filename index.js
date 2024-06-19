@@ -6,7 +6,7 @@ process.stdin.on("data", function (data) {
   let numero = Number(data.toString().trim());
 
   if (isNaN(numero)) {
-    console.log("Por favor, digite um número válido.");
+    console.log("Por favor, digite O número válido.");
   } else {
     numeros.push(numero);
 
